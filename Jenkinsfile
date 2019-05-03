@@ -13,7 +13,7 @@ pipeline {
        stages {
             stage('SCM checkout') {
                   steps {
-                        git url: 'https://github.com/Anusha-DevOp/CI-CD-for-PHP.git'
+                        git url: 'https://github.com/priya276/apache.git'
                         }
              }
              
@@ -25,7 +25,7 @@ pipeline {
               
               stage('transfer artifacts') {
                     steps {
-                          sshPublisher(publishers: [sshPublisherDesc(configName: 'MyApacheInstance', transfers: [sshTransfer(excludes: '', execCommand: '', execTimeout: 120000, flatten: true, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: '/var/www/html', remoteDirectorySDF: false, removePrefix: '', sourceFiles: '**/*.html')], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: true)])
+                          sshPublisher(publishers: [sshPublisherDesc(configName: 'MyApacheinstance', transfers: [sshTransfer(excludes: '', execCommand: '', execTimeout: 120000, flatten: true, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: '/var/www/html', remoteDirectorySDF: false, removePrefix: '', sourceFiles: '**/*.html')], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: true)])
                           }
               }
        }
